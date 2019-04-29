@@ -1,0 +1,16 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.fire {
+  color: red;
+}
+
+.water {
+  color: blue;
+}
+
+.electric {
+  color: yellow;
+}
