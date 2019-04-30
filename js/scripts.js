@@ -28,27 +28,21 @@ for ( var i = 0; i < 3; i++ ) {
   // this code will add extra text to the highest pokemon.
   if (repository[i].heigth > top_value) {
     top_value = repository[i].heigth;
-    document.write("<p>" + repository[i].name + "\( " + "heigth: " + repository[i].heigth + ", Type: ")
-
-    // this code change color of the pokemon based on type
-    if (repository[i].types[0] === "Fire") {
-      document.write("<span class = \"fire\">" + repository[i].types[0] + "</span>")
-    } else if(repository[i].types[0] === "Water") {
-      document.write("<span class = \"water\">" + repository[i].types[0] + "</span>")
-    } else if(repository[i].types[0] === "Electric") {
-      document.write("<span class = \"electric\">" + repository[i].types[0] + "</span>")}
-
-    document.write(" \) -- Wow that's big!!! </p>" )
+    pokemon_write();
+    document.write(" -- Wow that's big!!! " )
   } else  {
+    pokemon_write()
 
-    document.write("<p>" + repository[i].name + "\( " + "heigth: " + repository[i].heigth + ", Type: " )
-
-    // this code change color of the pokemon based on type
-    if (repository[i].types[0] === "Fire") {
-      document.write("<span class = \"fire\">" + repository[i].types[0] + "</span> " + " \)" + "</p>")
-    } else if(repository[i].types[0] === "Water") {
-      document.write("<span class = \"water\">" + repository[i].types[0] + "</span> " + " \)" + " </p>")
-    } else if(repository[i].types[0] === "Electric") {
-      document.write("<span class = \"electric\">" + repository[i].types[0] + "</span> " + " \)" + "</p>") }
-    }
 }
+
+function pokemon_write () {
+  // this function outoputs pokemon data and change color of the font based on type of pokemon.
+  document.write("<p>" + repository[i].name + "\( " + "heigth: " + repository[i].heigth + ", Type: " )
+  if (repository[i].types[0] === "Fire") {
+    document.write("<span class = \"fire\">" + repository[i].types[0] + "</span> " + " \)")
+  } else if(repository[i].types[0] === "Water") {
+    document.write("<span class = \"water\">" + repository[i].types[0] + "</span> " + " \)")
+  } else if(repository[i].types[0] === "Electric") {
+    document.write("<span class = \"electric\">" + repository[i].types[0] + "</span> " + " \)") }
+  }
+};
