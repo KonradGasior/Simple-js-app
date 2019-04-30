@@ -20,13 +20,17 @@ var pokemon3 = {
 // Defined repository variable containing all of the objects in an array
 var repository = [ pokemon1, pokemon2, pokemon3 ];
 
+var top_value = repository[0].heigth;
+
 // Loop which will print the content of the pokemon object
 for ( var i = 0; i < 3; i++ ) {
-  if (repository[i].heigth > 0.5) {
 
-    // this line will add extra text only if pokemon heigth excedes 0.5m.
+  // this code will add extra text to the highest pokemon.
+  if (repository[i].heigth > top_value) {
+    top_value = repository[i].heigth;
     document.write("<p>" + repository[i].name + "\( " + "heigth: " + repository[i].heigth + ", Type: ")
 
+    // this code change color of the pokemon based on type
     if (repository[i].types[0] === "Fire") {
       document.write("<span class = \"fire\">" + repository[i].types[0] + "</span>")
     } else if(repository[i].types[0] === "Water") {
@@ -39,7 +43,7 @@ for ( var i = 0; i < 3; i++ ) {
 
     document.write("<p>" + repository[i].name + "\( " + "heigth: " + repository[i].heigth + ", Type: " )
 
-    // this part change color of the pokemon based on type
+    // this code change color of the pokemon based on type
     if (repository[i].types[0] === "Fire") {
       document.write("<span class = \"fire\">" + repository[i].types[0] + "</span> " + " \)" + "</p>")
     } else if(repository[i].types[0] === "Water") {
