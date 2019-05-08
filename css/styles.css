@@ -1,16 +1,65 @@
+/* Style index
+  Variables
+  General
+  Pokedex
+  Buttons
+
+  Colors used:
+    black: #000;
+    lightgrey: #d3d3d3;
+    white;
+*/
+
+// Variables:
+:root {
+  --main-color: #000;
+  --poke-list: #d3d3d3;
+}
+
+// General:
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: black;
-  color: white;
+  padding: 10px;
+  font-family: 'Crimson Text', Georgia, serif;
 }
 
-.fire {
-  color: red;
+// Pokedex:
+
+.app-wrap {
+  display: flex;
 }
 
-.water {
-  color: blue;
+ul.pokedex-window {
+  list-style-type: none;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  padding: 5px;
+  margin: 5px;
 }
 
-.electric {
-  color: yellow;
+/* Buttons */
+input[type='button'] {
+  width: 250px;
+  height: 25px;
+  font-size: 1.1em;
+  background-color: white;
+  margin-bottom: 10px;
+  text-align: left;
+  border: 1px solid white;
 }
+
+input[type='button']:hover {
+  background-color: lightgreen;
+  cursor: pointer;
+}
+
+// Device screen display optimization:
+/* @media all and (max-width: 500px) {
+  ul.pokedex-window {
+  }
+} */
