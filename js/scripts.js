@@ -14,6 +14,10 @@ var pokedexApp = (function (){
       return repository;
     };
 
+    // Detailed pokemon information display function!
+    function showDetails (pokemon) {
+      console.log(pokemon);
+    }
 
     //This function creat an nodes in DOM to create list of pokemons.
     function addListItem (item) {
@@ -24,6 +28,9 @@ var pokedexApp = (function (){
       $listItem.appendChild($button);
       $button.setAttribute('type', 'button');
       $button.setAttribute('value', item.name)
+      $button.addEventListener('click', function () {
+        showDetails(item);
+      })
     }
 
     return {
@@ -52,7 +59,7 @@ var pokedexApp = (function (){
     types: ["Water"]
   };
 
-  pokemonRepository.add(pokemon1);
+  pokemonRepository.addListItem(pokemon1);
   pokemonRepository.addListItem(pokemon2);
   pokemonRepository.addListItem(pokemon3);
 
