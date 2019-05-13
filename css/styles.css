@@ -3,6 +3,7 @@
   General
   Pokedex
   Buttons
+  Loading message
 
   Colors used:
     black: #000;
@@ -38,8 +39,10 @@ ul.pokedex-window {
   display: flex;
   flex-direction: column;
   width: 250px;
+  height: 250px;
   padding: 5px;
   margin: 5px;
+  overflow: auto;
 }
 
 /* Buttons */
@@ -56,6 +59,11 @@ input[type='button'] {
 input[type='button']:hover {
   background-color: lightgreen;
   cursor: pointer;
+}
+
+// Loading message:
+.loading-messageBox__show {
+  text-align: center;
 }
 
 // Device screen display optimization:
