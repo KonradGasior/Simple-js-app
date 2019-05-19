@@ -4,6 +4,7 @@
   Pokedex
   Buttons
   Loading message
+  Modal
 
   Colors used:
     black: #000;
@@ -11,29 +12,34 @@
     white;
 */
 
-// Variables:
+/* Variables: */
 :root {
   --main-color: #000;
   --poke-list: #d3d3d3;
 }
 
-// General:
+/* General: */
 * {
   box-sizing: border-box;
 }
 
 body {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
   padding: 10px;
   font-family: 'Crimson Text', Georgia, serif;
+  background-color: red;
 }
 
-// Pokedex:
+/* Pokedex: */
 
 .app-wrap {
-  display: flex;
+  width: 250px;
 }
 
 ul.pokedex-window {
+  background-color: white;
   list-style-type: none;
   border: 1px solid black;
   display: flex;
@@ -41,7 +47,6 @@ ul.pokedex-window {
   width: 250px;
   height: 250px;
   padding: 5px;
-  margin: 5px;
   overflow: auto;
 }
 
@@ -61,13 +66,56 @@ input[type='button']:hover {
   cursor: pointer;
 }
 
-// Loading message:
+/*  Loading Message: */
 .loading-messageBox__show {
   text-align: center;
 }
 
-// Device screen display optimization:
-/* @media all and (max-width: 500px) {
-  ul.pokedex-window {
+/* Modal */
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+  display: block;
+  position: absolute;
+  top: 125px;
+}
+
+.modal {
+  background-color: white;
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+  width: 250px;
+  height: 250px;
+}
+
+
+.modal-close {
+  float: right;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  border: 1px solid black;
+  background: red;
+}
+
+
+
+/* Device screen display optimization: */
+ @media all and (max-width: 500px) {
+  .app-wrap {
+    width: 300px;
   }
-} */
+
+  ul.pokedex-window {
+    padding: 0;
+    width: 300px;
+  }
+
+  .modal {
+    left: 110px;
+    width: 300px;
+  }
+}
